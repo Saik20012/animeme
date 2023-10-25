@@ -9,6 +9,9 @@
     /* background: #000; */
     
 }
+body{
+    background-color: #282a2b4c;
+}
 
 header{
     z-index: 999;
@@ -21,29 +24,53 @@ header{
     align-items: center;
     padding: 15px 200px;  
     transition: 0.5s ease; 
+    /* background-color: #282a2b6b; */
     
-    
-    /* text-decoration: none; */
-    /* background-color: black; */
 }
 
 header .brand{
-    /* color: #f50505; */
-    font-family: 'Red Rose', cursive;
+    
+    
     font-size: 2em;
+    font-weight: 600;
     text-decoration: none;
-    background: -webkit-linear-gradient(black, #ff0000);
+    background: rgb(255, 69, 1);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 1;
 }
-header .brand span{
-    font-size: 1em;
-    font-weight: 600;
+header .brand div{
+    
+    font-size: 1.5em;
+    font-weight: 800;
+    font-style: bold;
+    text-transform: capitalize;
+    z-index: 2;
+    top: 70px;
+    left: 90px;
+    
 }
+.icon_logo {
+    width: 30px;
+    margin-left: 5px;
+    margin-bottom: -3px;
+    animation: spin infinite 10s  linear;
+}
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
+
 
 header .navigation{
     position: relative;
+    
     
 }
 
@@ -55,6 +82,7 @@ header .navigation .navigation-items a{
     text-decoration: none;
     margin-left: 30px;
     transition: 0.3s ease;
+   
 
 }
 
@@ -87,6 +115,7 @@ section{
     flex-direction: column;
     background-color: #282a2b;
     color: white;
+    
 
 }
 
@@ -95,6 +124,11 @@ section{
     color: #fff;
     width: 70%;
     margin-top: 50px;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
 }
 
 .home .content h1{
@@ -126,8 +160,67 @@ section{
     border-radius: 2px;
 }
 
+.home video{
+z-index: 000;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0.5;
+}
 
+.home:before{
+    z-index: 777;
+    content: " ";
+    position: absolute;
+    background: #282a2b2f;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
+.slider-navigation{
+    z-index: 888; /*for overlay*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+.slider-navigation .nav-btn{
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255,255,0.5);
+    transition: 0.3, ease;
+
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+.slider-navigation .nav-btn.active{
+    background-color: #282a2b;
+}
+.video_slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.video_slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
 
 @media (max-width: 1040px){
     header{
@@ -155,3 +248,69 @@ section{
         transition: 0.3 ease;
     }
 }
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+
+
+@media (max-width: 1040px){
+    header{
+       
+        padding: 12px 20px;  
+    }
+
+    section{
+        padding: 100px 20px;
+    }
+    
+
+    .header .navigation{
+        /* position: relative; */
+        display: none;
+    }
+
+    
+}
+
+/* @media(max-width: 674px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .navigation-items{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        margin: 16px 0;
+    }
+
+     */
+    
+/* } */
