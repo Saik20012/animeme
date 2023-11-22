@@ -31,7 +31,9 @@ span{
 button{
     border-radius: 2em;
     border: 1px solid #fff;
-    background: #21a9d3;
+    /* background: #21a9d3; */
+    background: #546060;
+    /* background: #3a4143; */
     color: rgb(255, 255, 255);
     font-size: 12px;
     font-weight: bold;
@@ -60,7 +62,7 @@ input{
     background-color: #eee;
     border: none;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 13px;
     padding: 10px 12px;
     margin: 8px 0;
     width: 100%;
@@ -157,9 +159,12 @@ button.ghost{
 }
 
 .overlay{
-    background: #168aad;
+    /* background: #168aad;
     background: -webkit-linear-gradient(20deg, #34a0a4, #168aad);
-    background: linear-gradient(0deg, #34a0a4, #168aad);
+    background: linear-gradient(0deg, #34a0a4, #168aad); */
+    background: #25292a;
+    background: -webkit-linear-gradient(20deg, #546060, #25292a);
+    background: linear-gradient(0deg, #546060, #25292a);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
